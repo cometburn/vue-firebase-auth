@@ -25,19 +25,18 @@ export default {
     async getSecrets() {
       const token = await firebase.auth().currentUser.getIdToken();
 
-      let config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
+      console.log("token", token);
 
-      this.secrets = await this.$axios.get(
-        "http://localhost:8082",
-        config
-      );
+      // let config = {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // };
 
-      console.log(this.secrets)
-      this.secrets = this.secrets.data;
+      // this.secrets = await this.$axios.get("http://localhost:8080", config);
+
+      // console.log("test", this.secrets);
+      // this.secrets = this.secrets.data;
     },
   },
 };
